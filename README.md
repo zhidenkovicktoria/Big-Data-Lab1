@@ -46,6 +46,8 @@ dim_customer dim_product dim_store dim_supplier
 - Один поставщик может поставлять много товаров → связь 1:N.
 
 ## 4. Структура репозитория
+
+```bash
 Big-Data-Lab1/
 ├── .env # Переменные окружения 
 ├── .gitignore 
@@ -60,7 +62,7 @@ Big-Data-Lab1/
 ├── 02_import_mock_data.sql
 ├── 03_create_snowflake.sql
 └── 04_populate_snowflake.sql
-
+```
 
 ## 5. Подготовка окружения
 
@@ -103,7 +105,9 @@ docker-compose up -d
 ```bash
 # Подключение к БД
 docker exec -it bigdata_db psql -U vika -d bigdata_lab
+```
 
+```sql
 # Количество записей (должно быть 10000)
 SELECT COUNT(*) FROM mock_data;
 SELECT COUNT(*) FROM fact_sales;
